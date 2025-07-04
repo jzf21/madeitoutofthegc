@@ -6,7 +6,6 @@ import {
   Hotel, 
   IndianRupee, 
   Clock, 
-  Users, 
   Star,
   Lightbulb,
   ChevronRight
@@ -164,34 +163,24 @@ const TripResults: React.FC<TripResultsProps> = ({ tripPlan }) => {
           <Plane className="w-6 h-6 mr-3" />
           Travel Details
         </h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-            <h4 className="text-lg font-semibold text-white mb-3">Alternative Option</h4>
-            <div className="space-y-2 text-white/80">
-              {tripPlan.travel.alternative_options.map((option, idx) => (
-                <div key={idx} className="mb-4">
-                  <p><strong>Mode:</strong> {option.mode}</p>
-                  <p><strong>Duration:</strong> {option.duration}</p>
-                  <p><strong>Cost:</strong> {option.cost}</p>
-                  <p><strong>Pros/Cons:</strong> {option.pros_cons}</p>
-                </div>
-              ))}
+        {tripPlan.travel.alternative_options && tripPlan.travel.alternative_options.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h4 className="text-lg font-semibold text-white mb-3">Alternative Option</h4>
+              <div className="space-y-2 text-white/80">
+                {tripPlan.travel.alternative_options.map((option, idx) => (
+                  <div key={idx} className="mb-4">
+                    <p><strong>Mode:</strong> {option.mode}</p>
+                    <p><strong>Duration:</strong> {option.duration}</p>
+                    <p><strong>Cost:</strong> {option.cost}</p>
+                    <p><strong>Pros/Cons:</strong> {option.pros_cons}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          
-          <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-            <h4 className="text-lg font-semibold text-white mb-3">Return Journey</h4>
-            <div className="space-y-2 text-white/80">
-              <p><strong>Operator:</strong> {tripPlan.travel.return.operator}</p>
-              <p><strong>Route:</strong> {tripPlan.travel.return.route_details}</p>
-              <p><strong>Duration:</strong> {tripPlan.travel.return.duration}</p>
-              <p><strong>Price:</strong> {tripPlan.travel.return.price_range}</p>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
-
 
       {/* Accommodation */}
       <div className="backdrop-blur-sm bg-white/10 rounded-2xl p-8 border border-white/20 shadow-xl">
