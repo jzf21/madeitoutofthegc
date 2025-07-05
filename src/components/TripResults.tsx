@@ -213,7 +213,7 @@ const TripResults: React.FC<TripResultsProps> = ({ tripPlan }) => {
                   </span>
                 ))}
               </div>
-              <p>Link:<a href={hotel.link}></a></p>
+              <p className="text-white/80 mb-3">Link:<a href={hotel.link}>Click Here</a></p>
             </div>
           ))}
         </div>
