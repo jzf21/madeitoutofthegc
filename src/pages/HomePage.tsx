@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import TripPlanForm from '../components/TripPlanForm';
 import { TripFormData, TripPlan } from '../types/trip';
 import { generateTripId, saveTripPlan, getTripPlans } from '../utils/tripStorage';
-import { Sparkles, MapPin, Calendar, Trash2 } from 'lucide-react';
+import { Sparkles, MapPin, Calendar} from 'lucide-react';
 
 const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
