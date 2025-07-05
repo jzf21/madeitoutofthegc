@@ -1,7 +1,7 @@
-
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import TripDetailsPage from './pages/TripDetailsPage';
+import ServerStatus from './components/ServerStatus';
 
 function App() {
   return (
@@ -21,6 +21,9 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
+
+        {/* Server Status Floating Button */}
+        <ServerStatus />
       </div>
     </Router>
   );
