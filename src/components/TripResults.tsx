@@ -147,6 +147,7 @@ const TripResults: React.FC<TripResultsProps> = ({ tripPlan }) => {
               <p><strong>Route:</strong> {tripPlan.travel.outbound.route_details}</p>
               <p><strong>Duration:</strong> {tripPlan.travel.outbound.duration}</p>
               <p><strong>Price:</strong> {tripPlan.travel.outbound.price_range}</p>
+              <p><strong><a href={tripPlan.travel.outbound.link}>link</a></strong></p>
             </div>
           </div>
           
@@ -157,6 +158,7 @@ const TripResults: React.FC<TripResultsProps> = ({ tripPlan }) => {
               <p><strong>Route:</strong> {tripPlan.travel.return.route_details}</p>
               <p><strong>Duration:</strong> {tripPlan.travel.return.duration}</p>
               <p><strong>Price:</strong> {tripPlan.travel.return.price_range}</p>
+              <p><strong><a href={tripPlan.travel.return.link}>link</a></strong></p>
             </div>
           </div>
         </div>
@@ -211,6 +213,7 @@ const TripResults: React.FC<TripResultsProps> = ({ tripPlan }) => {
                   </span>
                 ))}
               </div>
+              <p>Link:<a href={hotel.link}></a></p>
             </div>
           ))}
         </div>
