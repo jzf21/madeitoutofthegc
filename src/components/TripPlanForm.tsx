@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Calendar, Users, IndianRupee, Plane } from 'lucide-react';
-
-interface TripFormData {
-  origin: string;
-  destination: string;
-  departureDate: string;
-  returnDate: string;
-  travelers: number;
-  budget: string;
-}
+import { TripFormData } from '../types/trip';
 
 interface TripPlanFormProps {
   onSubmit: (data: TripFormData) => void;

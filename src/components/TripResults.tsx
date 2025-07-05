@@ -10,74 +10,7 @@ import {
   Lightbulb,
   ChevronRight
 } from 'lucide-react';
-
-interface TripPlan {
-  trip_summary: {
-    destination: string;
-    origin: string;
-    dates: {
-      departure: string;
-      return: string;
-    };
-    duration: string;
-  };
-  travel: {
-    mode: string;
-    outbound: {
-      transport_type: string;
-      operator: string;
-      departure_time: string;
-      arrival_time: string;
-      duration: string;
-      distance: string;
-      price_range: string;
-      route_details: string;
-      link:string;
-    };
-    return: {
-      transport_type: string;
-      operator: string;
-      departure_time: string;
-      arrival_time: string;
-      duration: string;
-      distance: string;
-      price_range: string;
-      route_details: string;
-      link:string;
-    };
-    alternative_options: Array<{
-      mode: string;
-      duration: string;
-      cost: string;
-      pros_cons: string;
-    }>;
-  };
-  accommodation: {
-    recommended_hotels: Array<{
-      name: string;
-      location: string;
-      price_per_night: string;
-      rating: string;
-      amenities: string[];
-      link:string;
-    }>;
-  };
-  daily_itinerary: Record<string, {
-    date: string;
-    activities: string[];
-    estimated_cost: string;
-  }>;
-  expense_breakdown: Record<string, {
-    amount: string;
-    description: string;
-  }>;
-  total_estimated_cost: {
-    amount: string;
-    per_person: string;
-    currency: string;
-  };
-  travel_tips: string[];
-}
+import { TripPlan } from '../types/trip';
 
 interface TripResultsProps {
   tripPlan: TripPlan;
@@ -147,7 +80,7 @@ const TripResults: React.FC<TripResultsProps> = ({ tripPlan }) => {
               <p><strong>Route:</strong> {tripPlan.travel.outbound.route_details}</p>
               <p><strong>Duration:</strong> {tripPlan.travel.outbound.duration}</p>
               <p><strong>Price:</strong> {tripPlan.travel.outbound.price_range}</p>
-              <p><strong><a href={tripPlan.travel.outbound.link}>link</a></strong></p>
+              <p className='underline '><strong><a href={tripPlan.travel.outbound.link}>Visit Site</a></strong></p>
             </div>
           </div>
           
@@ -158,7 +91,7 @@ const TripResults: React.FC<TripResultsProps> = ({ tripPlan }) => {
               <p><strong>Route:</strong> {tripPlan.travel.return.route_details}</p>
               <p><strong>Duration:</strong> {tripPlan.travel.return.duration}</p>
               <p><strong>Price:</strong> {tripPlan.travel.return.price_range}</p>
-              <p><strong><a href={tripPlan.travel.return.link}>link</a></strong></p>
+              <p className='underline '><strong><a href={tripPlan.travel.return.link}>Visit Site</a></strong></p>
             </div>
           </div>
         </div>
@@ -213,7 +146,7 @@ const TripResults: React.FC<TripResultsProps> = ({ tripPlan }) => {
                   </span>
                 ))}
               </div>
-              <p className="text-white/80 mb-3">Link:<a href={hotel.link}>Click Here</a></p>
+              <p className="text-white/80 mb-3 underline"><a href={hotel.link}>Visit Site</a></p>
             </div>
           ))}
         </div>
