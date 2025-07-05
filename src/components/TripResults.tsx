@@ -32,6 +32,7 @@ interface TripPlan {
       distance: string;
       price_range: string;
       route_details: string;
+      link:string;
     };
     return: {
       transport_type: string;
@@ -42,6 +43,7 @@ interface TripPlan {
       distance: string;
       price_range: string;
       route_details: string;
+      link:string;
     };
     alternative_options: Array<{
       mode: string;
@@ -57,6 +59,7 @@ interface TripPlan {
       price_per_night: string;
       rating: string;
       amenities: string[];
+      link:string;
     }>;
   };
   daily_itinerary: Record<string, {
