@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
     try {
       const user_prompt = `i want to travel from ${formData.origin} to ${formData.destination} dates ${formData.departureDate} to ${formData.returnDate} with a group of ${formData.travelers}`;
       const baseUrl = import.meta.env.VITE_API_URL || 'https://ai-travel-agent-d8wv.onrender.com';
-      const url = `${baseUrl}/api/v1/generate-plan?user_prompt=${user_prompt}`;
+      const url = `${baseUrl}/api/v1/generate-plan-aggressive?user_prompt=${user_prompt}`;
       const response = await fetch(url, {
         method: 'POST',
         headers: {
