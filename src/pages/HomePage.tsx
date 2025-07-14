@@ -60,6 +60,21 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto">
+      {/* Auth Navigation */}
+      <div className="flex justify-end space-x-4 mb-4">
+        <button
+          onClick={() => navigate('/login')}
+          className="bg-blue-500 text-white px-4 py-2 rounded font-bold hover:bg-blue-600 transition"
+        >
+          Login
+        </button>
+        <button
+          onClick={() => navigate('/register')}
+          className="bg-purple-500 text-white px-4 py-2 rounded font-bold hover:bg-purple-600 transition"
+        >
+          Register
+        </button>
+      </div>
       {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
