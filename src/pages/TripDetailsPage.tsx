@@ -39,8 +39,8 @@ const TripDetailsPage: React.FC = () => {
     return (
       <div className="max-w-6xl mx-auto">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto"></div>
-          <p className="text-white/60 mt-4">Loading trip details...</p>
+          <div className="animate-spin  h-12 w-12 border-b-2 border-white mx-auto"></div>
+          <p className="text-black/60 mt-4">Loading trip details...</p>
         </div>
       </div>
     );
@@ -56,7 +56,7 @@ const TripDetailsPage: React.FC = () => {
       <div className="flex items-center justify-between mb-8">
         <button
           onClick={() => navigate('/')}
-          className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-xl hover:bg-white/20 transition-all duration-200 font-medium"
+          className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 text-black px-4 py-2  hover:bg-white/20 transition-all duration-200 font-medium"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Home
@@ -65,7 +65,7 @@ const TripDetailsPage: React.FC = () => {
         <div className="flex items-center space-x-4">
           <button
             onClick={handleNewTrip}
-            className="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all duration-200 font-medium"
+            className="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-600 text-black px-6 py-2  hover:from-blue-600 hover:to-purple-700 transition-all duration-200 font-medium"
           >
             <Sparkles className="w-4 h-4 mr-2" />
             Plan Another Trip
@@ -73,7 +73,7 @@ const TripDetailsPage: React.FC = () => {
           
           <button
             onClick={handleDeleteTrip}
-            className="inline-flex items-center bg-red-500/20 backdrop-blur-sm border border-red-500/30 text-red-400 px-4 py-2 rounded-xl hover:bg-red-500/30 transition-all duration-200 font-medium"
+            className="inline-flex items-center bg-red-500/20 backdrop-blur-sm border border-red-500/30 text-red-400 px-4 py-2  hover:bg-red-500/30 transition-all duration-200 font-medium"
           >
             <Trash2 className="w-4 h-4 mr-2" />
             Delete Trip

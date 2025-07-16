@@ -53,7 +53,7 @@ const ServerStatus: React.FC = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      <div className={`flex items-center space-x-2 px-4 py-2 rounded-full shadow-lg text-white font-medium ${getStatusColor()}`}>
+      <div className={`flex items-center space-x-2 px-4 py-2  shadow-lg text-black font-medium ${getStatusColor()}`}>
         {getStatusIcon()}
         <span className="text-sm">{getStatusText()}</span>
       </div>
