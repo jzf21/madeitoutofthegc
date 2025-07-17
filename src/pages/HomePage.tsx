@@ -109,7 +109,7 @@ const HomePage: React.FC = () => {
       <StepProgressModal step={progressStep ?? 0} visible={progressStep !== null} />
       <Navbar/>
       {/* Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 my-8 ">
         <h1 className="text-5xl md:text-6xl font-bold text-black mb-4 tracking-tight">
           AI Trip Planner
         </h1>
