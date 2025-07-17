@@ -130,16 +130,17 @@ const Navbar: React.FC = () => {
                       setIsLoginMode(true)
                       setShowLoginModal(true)
                     }}
-                    className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                    className="text-[#283F45] hover:text-[#24424D] px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[#EBE8DF]/30"
                   >
                     Sign In
                   </button>
-                  <button
+                   <button
                     onClick={() => {
                       setIsLoginMode(false)
                       setShowLoginModal(true)
+                      
                     }}
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-lg text-sm font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                    className="w-full bg-gradient-to-r from-[#266267] to-[#24424D] text-white px-3 py-2 rounded-xl text-base font-medium hover:from-[#266267]/90 hover:to-[#24424D]/90 transition-all duration-300"
                   >
                     Sign Up
                   </button>
@@ -270,7 +271,7 @@ const Navbar: React.FC = () => {
             </div>
             <button
               onClick={() => setShowLoginModal(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-lg p-2"
+              className="z-50 absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-lg p-2"
             >
               <X className="w-5 h-5" />
             </button>

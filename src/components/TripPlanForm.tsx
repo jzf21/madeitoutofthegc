@@ -133,7 +133,7 @@ const TripPlanForm: React.FC<TripPlanFormProps> = ({ onSubmit, isLoading }) => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-[#EBE8DF] to-[#E9E9DF] rounded-full opacity-30"></div>
         <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-gradient-to-tr from-[#266267]/10 to-[#24424D]/10 rounded-full"></div>
-        <div className="absolute top-1/2 right-8 w-24 h-24 bg-gradient-to-bl from-[#F0B46B]/20 to-[#E87851]/20 rounded-full"></div>
+        <div className="absolute top-1/2 right-8  w-24 h-24 bg-gradient-to-bl from-[#F0B46B]/20 to-[#E87851]/20 rounded-full"></div>
       </div>
 
       <div className="relative">
@@ -159,7 +159,7 @@ const TripPlanForm: React.FC<TripPlanFormProps> = ({ onSubmit, isLoading }) => {
                 onChange={handleChange}
                 onBlur={() => handleBlur("origin")}
                 placeholder="Enter origin city (e.g., Mumbai, Delhi)"
-                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#EBE8DF]/20 text-[#24424D] placeholder-[#283F45]/50 focus:outline-none focus:ring-2 focus:ring-[#266267] focus:border-[#266267] transition-all duration-300 ${
+                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#f8f8f6] text-[#24424D] placeholder-[#283F45]/50 focus:outline-none focus:ring-2 focus:ring-[#266267] focus:border-[#266267] transition-all duration-300 ${
                   touched.origin && errors.origin
                     ? "border-[#E87851] bg-[#E87851]/5"
                     : "border-[#E3E1DD] hover:border-[#266267]/50"
@@ -187,7 +187,7 @@ const TripPlanForm: React.FC<TripPlanFormProps> = ({ onSubmit, isLoading }) => {
                 onChange={handleChange}
                 onBlur={() => handleBlur("destination")}
                 placeholder="Enter destination (e.g., Goa, Kerala)"
-                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#EBE8DF]/20 text-[#24424D] placeholder-[#283F45]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B46B] focus:border-[#F0B46B] transition-all duration-300 ${
+                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#f8f8f6] text-[#24424D] placeholder-[#283F45]/50 focus:outline-none focus:ring-2 focus:ring-[#F0B46B] focus:border-[#F0B46B] transition-all duration-300 ${
                   touched.destination && errors.destination
                     ? "border-[#E87851] bg-[#E87851]/5"
                     : "border-[#E3E1DD] hover:border-[#F0B46B]/50"
@@ -217,7 +217,7 @@ const TripPlanForm: React.FC<TripPlanFormProps> = ({ onSubmit, isLoading }) => {
                 onChange={handleChange}
                 onBlur={() => handleBlur("departureDate")}
                 min={getTodayDate()}
-                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#EBE8DF]/20 text-[#24424D] focus:outline-none focus:ring-2 focus:ring-[#266267] focus:border-[#266267] transition-all duration-300 ${
+                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#f8f8f6] text-[#24424D] focus:outline-none focus:ring-2 focus:ring-[#266267] focus:border-[#266267] transition-all duration-300 ${
                   touched.departureDate && errors.departureDate
                     ? "border-[#E87851] bg-[#E87851]/5"
                     : "border-[#E3E1DD] hover:border-[#266267]/50"
@@ -245,7 +245,7 @@ const TripPlanForm: React.FC<TripPlanFormProps> = ({ onSubmit, isLoading }) => {
                 onChange={handleChange}
                 onBlur={() => handleBlur("returnDate")}
                 min={getMinReturnDate()}
-                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#EBE8DF]/20 text-[#24424D] focus:outline-none focus:ring-2 focus:ring-[#E87851] focus:border-[#E87851] transition-all duration-300 ${
+                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#f8f8f6] text-[#24424D] focus:outline-none focus:ring-2 focus:ring-[#E87851] focus:border-[#E87851] transition-all duration-300 ${
                   touched.returnDate && errors.returnDate
                     ? "border-[#E87851] bg-[#E87851]/5"
                     : "border-[#E3E1DD] hover:border-[#E87851]/50"
@@ -272,7 +272,7 @@ const TripPlanForm: React.FC<TripPlanFormProps> = ({ onSubmit, isLoading }) => {
                 name="travelers"
                 value={formData.travelers}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[#E3E1DD] rounded-2xl bg-[#EBE8DF]/20 text-[#24424D] focus:outline-none focus:ring-2 focus:ring-[#24424D] focus:border-[#24424D] hover:border-[#24424D]/50 transition-all duration-300"
+                className="w-full px-4 py-3 border-2 border-[#E3E1DD] rounded-2xl bg-[#f8f8f6] text-[#24424D] focus:outline-none focus:ring-2 focus:ring-[#24424D] focus:border-[#24424D] hover:border-[#24424D]/50 transition-all duration-300"
               >
                 {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                   <option key={num} value={num}>
@@ -292,7 +292,7 @@ const TripPlanForm: React.FC<TripPlanFormProps> = ({ onSubmit, isLoading }) => {
                 value={formData.budget}
                 onChange={handleChange}
                 onBlur={() => handleBlur("budget")}
-                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#EBE8DF]/20 text-[#24424D] focus:outline-none focus:ring-2 focus:ring-[#F0B46B] focus:border-[#F0B46B] transition-all duration-300 ${
+                className={`w-full px-4 py-3 border-2 rounded-2xl bg-[#f8f8f6] text-[#24424D] focus:outline-none focus:ring-2 focus:ring-[#F0B46B] focus:border-[#F0B46B] transition-all duration-300 ${
                   touched.budget && errors.budget
                     ? "border-[#E87851] bg-[#E87851]/5"
                     : "border-[#E3E1DD] hover:border-[#F0B46B]/50"
