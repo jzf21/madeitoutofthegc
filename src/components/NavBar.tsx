@@ -4,6 +4,7 @@ import { Plane, Settings, LogOut, Menu, X, MapPin, Calendar, Heart, CreditCard }
 import RegisterForm from "./RegisterForm"
 import LoginForm from "./LoginForm"
 import { useAuth } from "../contexts/AuthContext"
+import logo from "../assets/copylogo.ico"
 
 const Navbar: React.FC = () => {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false)
@@ -35,10 +36,14 @@ const Navbar: React.FC = () => {
             {/* Logo */}
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#266267] to-[#24424D] rounded-xl flex items-center justify-center mr-3 shadow-lg">
-                  <Plane className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 bg-gradient-to-br rounded-[999px] flex items-center justify-center mr-3 shadow-lg overflow-hidden">
+                  <img
+                    src={logo}
+                    className="w-full h-full object-cover"
+                    alt="Logo"
+                  />
                 </div>
-                <span className="text-xl font-bold text-[#24424D]">TripPlanner</span>
+                <span className="text-xl font-normal text-[#24424D]">VOYA</span>
               </div>
             </div>
 
