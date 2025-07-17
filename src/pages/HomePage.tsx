@@ -109,13 +109,7 @@ const HomePage: React.FC = () => {
       <StepProgressModal step={progressStep ?? 0} visible={progressStep !== null} />
       <Navbar/>
       {/* Header */}
-      <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-[#EBE8DF] to-[#E9E9DF] rounded-full opacity-20"></div>
-          <div className="absolute top-1/3 left-8 w-48 h-48 bg-gradient-to-tr from-[#F0B46B]/20 to-[#E87851]/20 rounded-full"></div>
-          <div className="absolute bottom-1/4 right-16 w-80 h-80 bg-gradient-to-bl from-[#266267]/10 to-[#24424D]/10 rounded-full"></div>
-          <div className="absolute bottom-10 left-1/4 w-32 h-32 bg-gradient-to-tr from-[#EBE8DF]/30 to-[#E9E9DF]/30 rounded-full"></div>
-        </div>
-
+    
         {/* Hero Content */}
         <div className="relative z-10 text-center mb-12 my-8">
           <h1 className="text-5xl md:text-6xl font-bold text-[#24424D] mb-4 tracking-tight">

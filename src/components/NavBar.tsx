@@ -30,17 +30,18 @@ const Navbar: React.FC = () => {
   return (
     <>
       <nav className="bg-white shadow-lg border-b border-gray-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#266267] to-[#24424D] rounded-xl flex items-center justify-center mr-3 shadow-lg">
                   <Plane className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-xl font-bold text-gray-900">TripPlanner</span>
+                <span className="text-xl font-bold text-[#24424D]">TripPlanner</span>
               </div>
             </div>
+
 
             {/* Desktop Navigation */}
             <div className="hidden md:block">
@@ -220,16 +221,17 @@ const Navbar: React.FC = () => {
                   >
                     Sign In
                   </button>
-                  <button
+                     <button
                     onClick={() => {
                       setIsLoginMode(false)
                       setShowLoginModal(true)
                       setShowMobileMenu(false)
                     }}
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-2 rounded-lg text-base font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
+                    className="w-full bg-gradient-to-r from-[#266267] to-[#24424D] text-white px-3 py-2 rounded-xl text-base font-medium hover:from-[#266267]/90 hover:to-[#24424D]/90 transition-all duration-300"
                   >
                     Sign Up
                   </button>
+                  
                 </div>
               )}
             </div>

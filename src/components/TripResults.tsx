@@ -34,11 +34,11 @@ const TripResults: React.FC<TripResultsProps> = ({ tripPlan }) => {
   return (
     <div className="space-y-8 max-w-6xl mx-auto relative">
       {/* Background decorative elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+      {/* <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-[#EBE8DF] to-[#E9E9DF] rounded-full opacity-20"></div>
         <div className="absolute top-1/3 left-8 w-24 h-24 bg-gradient-to-tr from-[#F0B46B]/20 to-[#E87851]/20 rounded-full"></div>
         <div className="absolute bottom-1/4 right-16 w-40 h-40 bg-gradient-to-bl from-[#266267]/10 to-[#24424D]/10 rounded-full"></div>
-      </div>
+      </div> */}
 
       {/* Trip Summary Header */}
       <div className="bg-white rounded-3xl shadow-2xl p-8 border border-[#E3E1DD] relative overflow-hidden">
