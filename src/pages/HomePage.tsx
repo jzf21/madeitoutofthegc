@@ -171,7 +171,7 @@ const HomePage: React.FC = () => {
         <div className="relative z-10 flex flex-wrap items-center justify-center gap-8 text-[#283F45]/60 text-sm mb-8">
           <div className="flex items-center">
             <div className="w-2 h-2 bg-[#F0B46B] rounded-full mr-2"></div>
-            <span>10,000+ trips planned</span>
+            <span>1.0,000+ trips planned</span>
           </div>
           <div className="flex items-center">
             <div className="w-2 h-2 bg-[#266267] rounded-full mr-2"></div>
