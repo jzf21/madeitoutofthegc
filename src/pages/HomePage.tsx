@@ -109,16 +109,88 @@ const HomePage: React.FC = () => {
       <StepProgressModal step={progressStep ?? 0} visible={progressStep !== null} />
       <Navbar/>
       {/* Header */}
-      <div className="text-center mb-12 my-8 ">
-        <h1 className="text-5xl md:text-6xl font-bold text-black mb-4 tracking-tight">
-          AI Trip Planner
-        </h1>
-        <p className="text-xl text-black/70 max-w-2xl mx-auto leading-relaxed">
-          Create your perfect travel itinerary with AI-powered recommendations, 
-          detailed cost breakdowns, and personalized experiences
-        </p>
-      </div>
+      <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-[#EBE8DF] to-[#E9E9DF] rounded-full opacity-20"></div>
+          <div className="absolute top-1/3 left-8 w-48 h-48 bg-gradient-to-tr from-[#F0B46B]/20 to-[#E87851]/20 rounded-full"></div>
+          <div className="absolute bottom-1/4 right-16 w-80 h-80 bg-gradient-to-bl from-[#266267]/10 to-[#24424D]/10 rounded-full"></div>
+          <div className="absolute bottom-10 left-1/4 w-32 h-32 bg-gradient-to-tr from-[#EBE8DF]/30 to-[#E9E9DF]/30 rounded-full"></div>
+        </div>
 
+        {/* Hero Content */}
+        <div className="relative z-10 text-center mb-12 my-8">
+          <h1 className="text-5xl md:text-6xl font-bold text-[#24424D] mb-4 tracking-tight">
+            AI Trip Planner
+          </h1>
+          <p className="text-xl text-[#283F45]/70 max-w-2xl mx-auto leading-relaxed">
+            Create your perfect travel itinerary with AI-powered recommendations, 
+            detailed cost breakdowns, and personalized experiences
+          </p>
+        </div>
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+          <div className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#E3E1DD] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div className="w-12 h-12 bg-gradient-to-br from-[#266267] to-[#24424D] rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-[#24424D] mb-2">AI-Powered</h3>
+            <p className="text-[#283F45]/70 text-sm">Smart recommendations tailored to your preferences and budget</p>
+          </div>
+
+          <div className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#E3E1DD] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div className="w-12 h-12 bg-gradient-to-br from-[#F0B46B] to-[#E87851] rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-[#24424D] mb-2">Cost Breakdown</h3>
+            <p className="text-[#283F45]/70 text-sm">Detailed expense analysis to help you plan within budget</p>
+          </div>
+
+          <div className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#E3E1DD] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div className="w-12 h-12 bg-gradient-to-br from-[#266267] to-[#F0B46B] rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-[#24424D] mb-2">Personalized</h3>
+            <p className="text-[#283F45]/70 text-sm">Customized itineraries based on your travel style and interests</p>
+          </div>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="relative z-10 flex flex-wrap items-center justify-center gap-8 text-[#283F45]/60 text-sm mb-8">
+          <div className="flex items-center">
+            <div className="w-2 h-2 bg-[#F0B46B] rounded-full mr-2"></div>
+            <span>10,000+ trips planned</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-2 h-2 bg-[#266267] rounded-full mr-2"></div>
+            <span>4.9/5 user rating</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-2 h-2 bg-[#E87851] rounded-full mr-2"></div>
+            <span>Trusted by travelers worldwide</span>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Trip Planning Form */}
         <div>
