@@ -1,7 +1,8 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 interface RegisterFormProps {
   onSuccess?: () => void
@@ -20,8 +21,18 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess }) => {
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
 
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  function getErrorMessage(err: unknown): string {
+    if (typeof err === 'object' && err && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+      return (err as { message: string }).message;
+    }
+    return 'Registration failed';
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,7 +42,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess }) => {
     setSuccess(false)
 
     try {
-      const baseUrl = process.env.NEXT_PUBLIC_API_URL || "https://ai-travel-agent-d8wv.onrender.com"
+      const baseUrl = import.meta.env.VITE_API_URL || 'https://ai-travel-agent-d8wv.onrender.com';
       const response = await fetch(`${baseUrl}/api/v1/users/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -42,11 +53,13 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess }) => {
         const data = await response.json()
         throw new Error(data.message || "Registration failed")
       }
-
-      setSuccess(true)
-      if (onSuccess) onSuccess()
-    } catch (err: any) {
-      setError(err.message)
+      const data = await response.json();
+      setSuccess(true);
+      login(data); // Use context login if user data is returned
+      if (onSuccess) onSuccess();
+      setTimeout(() => navigate('/'), 1000);
+    } catch (err: unknown) {
+      setError(getErrorMessage(err));
     } finally {
       setLoading(false)
     }

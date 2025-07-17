@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useAuth } from './AuthContext';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 import { Eye, EyeOff, Mail, Lock, AlertCircle, CheckCircle } from 'lucide-react';
 
 interface LoginFormProps {
@@ -35,10 +35,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
   const validateField = (name: string, value: string): string | undefined => {
     switch (name) {
       case 'email':
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        { const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!value) return 'Email is required';
         if (!emailRegex.test(value)) return 'Please enter a valid email address';
-        break;
+        break; }
       case 'password':
         if (!value) return 'Password is required';
         if (value.length < 6) return 'Password must be at least 6 characters';
@@ -83,6 +83,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
     setErrors(prev => ({ ...prev, [name]: error }));
   };
 
+  function getErrorMessage(err: unknown): string {
+    if (typeof err === 'object' && err && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+      return (err as { message: string }).message;
+    }
+    return 'Login failed';
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -107,15 +114,15 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
       
       const data = await response.json();
       setSuccess(true);
-      login(data);
+      login(data); // Use context login
       
       if (onSuccess) onSuccess(data);
       
       // Small delay to show success message
       setTimeout(() => navigate('/'), 1000);
       
-    } catch (err: any) {
-      setErrors({ general: err.message });
+    } catch (err: unknown) {
+      setErrors({ general: getErrorMessage(err) });
     } finally {
       setLoading(false);
     }

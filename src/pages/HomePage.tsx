@@ -5,7 +5,7 @@ import { TripFormData, TripPlan } from '../types/trip';
 import { generateTripId, saveTripPlan, getTripPlans } from '../utils/tripStorage';
 import { MapPin, Calendar, Loader, CheckCircle } from 'lucide-react';
 import Navbar from '../components/NavBar';
-import { useAuth } from '../components/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 
 const STEP_LABELS = [
   'Fetching flight details...',

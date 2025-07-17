@@ -3,34 +3,17 @@ import { useState } from "react"
 import { Plane, Settings, LogOut, Menu, X, MapPin, Calendar, Heart, CreditCard } from "lucide-react"
 import RegisterForm from "./RegisterForm"
 import LoginForm from "./LoginForm"
-
-interface UserProfile {
-  name: string
-  email: string
-  avatar?: string
-}
+import { useAuth } from "../contexts/AuthContext"
 
 const Navbar: React.FC = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [showProfileDropdown, setShowProfileDropdown] = useState(false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [showLoginModal, setShowLoginModal] = useState(false)
   const [isLoginMode, setIsLoginMode] = useState(true)
-
-  // Mock user data
-  const user: UserProfile = {
-    name: "John Doe",
-    email: "john.doe@example.com",
-    avatar: "/placeholder.svg?height=40&width=40",
-  }
-
-  const handleLogin = () => {
-    setIsAuthenticated(true)
-    setShowLoginModal(false)
-  }
+  const { user, isLoggedIn, logout } = useAuth()
 
   const handleLogout = () => {
-    setIsAuthenticated(false)
+    logout()
     setShowProfileDropdown(false)
   }
 
@@ -77,26 +60,26 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Auth Section */}
             <div className="hidden md:block">
-              {isAuthenticated ? (
+              {isLoggedIn && user ? (
                 <div className="relative">
                   <button
                     onClick={toggleProfileDropdown}
                     className="flex items-center space-x-3 text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg p-2"
                   >
                     <img
-                      src={user.avatar || "/placeholder.svg"}
-                      alt={user.name}
+                      src={typeof user.avatar === 'string' && user.avatar ? user.avatar : "/placeholder.svg"}
+                      alt={typeof user.first_name === 'string' && user.first_name ? user.first_name : "User"}
                       className="w-8 h-8 rounded-full border-2 border-gray-200"
                     />
-                    <span className="text-sm font-medium">{user.name}</span>
+                    <span className="text-sm font-medium">{String(user.first_name || user.username || user.email || "User")}</span>
                   </button>
 
                   {/* Profile Dropdown */}
                   {showProfileDropdown && (
                     <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
                       <div className="px-4 py-3 border-b border-gray-100">
-                        <p className="text-sm font-medium text-gray-900">{user.name}</p>
-                        <p className="text-sm text-gray-500">{user.email}</p>
+                        <p className="text-sm font-medium text-gray-900">{String(user.first_name || user.username || user.email || "User")}</p>
+                        <p className="text-sm text-gray-500">{String(user.email || "")}</p>
                       </div>
                       <div className="py-2">
                         <a
@@ -190,17 +173,17 @@ const Navbar: React.FC = () => {
                 </a>
               ))}
 
-              {isAuthenticated ? (
+              {isLoggedIn && user ? (
                 <div className="border-t border-gray-100 pt-4 mt-4">
                   <div className="flex items-center px-3 py-2 mb-2">
                     <img
-                      src={user.avatar || "/placeholder.svg"}
-                      alt={user.name}
+                      src={typeof user.avatar === 'string' && user.avatar ? user.avatar : "/placeholder.svg"}
+                      alt={typeof user.first_name === 'string' && user.first_name ? user.first_name : "User"}
                       className="w-10 h-10 rounded-full border-2 border-gray-200 mr-3"
                     />
                     <div>
-                      <p className="text-sm font-medium text-gray-900">{user.name}</p>
-                      <p className="text-sm text-gray-500">{user.email}</p>
+                      <p className="text-sm font-medium text-gray-900">{String(user.first_name || user.username || user.email || "User")}</p>
+                      <p className="text-sm text-gray-500">{String(user.email || "")}</p>
                     </div>
                   </div>
                   <a
@@ -271,9 +254,6 @@ const Navbar: React.FC = () => {
                 </p>
               </div>
               {isLoginMode? <LoginForm/>:<RegisterForm/>}
-              
-             
-
               <div className="mt-2 text-center">
                 <p className="text-gray-600">
                   {isLoginMode ? "Don't have an account?" : "Already have an account?"}{" "}
@@ -286,7 +266,6 @@ const Navbar: React.FC = () => {
                 </p>
               </div>
             </div>
-
             <button
               onClick={() => setShowLoginModal(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-lg p-2"
