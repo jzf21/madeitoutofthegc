@@ -6,6 +6,7 @@ import { generateTripId, saveTripPlan, getTripPlans } from '../utils/tripStorage
 import { MapPin, Calendar, Loader, CheckCircle } from 'lucide-react';
 import Navbar from '../components/NavBar';
 import { useAuth } from '../contexts/AuthContext';
+import Layout from '../layouts/Layout';
 
 const STEP_LABELS = [
   'Fetching flight details...',
@@ -105,9 +106,10 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <Layout>
+      <div className="max-w-6xl mx-auto">
       <StepProgressModal step={progressStep ?? 0} visible={progressStep !== null} />
-      <Navbar/>
+      
       {/* Header */}
     
         {/* Hero Content */}
@@ -236,6 +238,7 @@ const HomePage: React.FC = () => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 
