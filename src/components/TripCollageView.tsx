@@ -107,15 +107,10 @@ const TripCollageView: React.FC<TripCollageProps> = ({ isEditing = false }) => {
     }
 
     // Only fetch if we have user and id
-    if (user && id) {
+    if ( id) {
       fetchData()
     } else {
       setIsLoading(false)
-      if (!user) {
-        setError("Please log in to view collages")
-      } else if (!id) {
-        setError("No collage ID provided")
-      }
     }
   }, [user, id]) // Dependencies: refetch when user or id changes
 
