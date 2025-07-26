@@ -119,10 +119,10 @@ const TripCollage: React.FC<TripCollageProps> = ({ isEditing = true }) => {
         return
       }
 
-      // Validate file size (e.g., 5MB limit)
-      const maxSize = 5 * 1024 * 1024 // 5MB
+      // Validate file size (e.g., 10MB limit)
+      const maxSize = 10 * 1024 * 1024 // 10MB
       if (file.size > maxSize) {
-        alert(`File ${file.name} is too large. Maximum size is 5MB.`)
+        alert(`File ${file.name} is too large. Maximum size is 10MB.`)
         return
       }
 
