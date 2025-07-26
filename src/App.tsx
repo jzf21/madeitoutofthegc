@@ -5,6 +5,8 @@ import ServerStatus from './components/ServerStatus';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import ChatPage from './pages/Chat';
+import CollagePage from './pages/Collage';
+import CollageView from './pages/CollageView';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/trip/:id" element={<TripDetailsPage />} />
             <Route path="/chat" element={<ChatPage/>}/>
+            <Route path='/collage' element={<CollagePage/>}/>
+            <Route path='/collage/:id' element={<CollageView/>}/>
             <Route path="*" element={<Navigate to="/" replace />} />
             
           </Routes>
