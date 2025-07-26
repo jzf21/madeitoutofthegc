@@ -16,6 +16,7 @@ interface TripCollageProps {
 }
 
 const TripCollage: React.FC<TripCollageProps> = ({ isEditing = true }) => {
+  const baseUrl = import.meta.env.VITE_API_URL || 'https://ai-travel-agent-d8wv.onrender.com';
   const { user } = useAuth()
   const [tripTitle, setTripTitle] = useState("My Amazing Journey")
   const [tripSubtitle, setTripSubtitle] = useState("A world of wonders")
@@ -72,7 +73,7 @@ const TripCollage: React.FC<TripCollageProps> = ({ isEditing = true }) => {
         console.log(`${key}:`, value)
       }
 
-      const response = await fetch("http://localhost:8000/api/v1/collage/collages", {
+      const response = await fetch(`${baseUrl}/api/v1/collage/collages`, {
         method: "POST",
         body: formData,
         // Don't set Content-Type header - let browser set it with boundary

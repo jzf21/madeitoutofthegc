@@ -18,6 +18,7 @@ interface TripCollageProps {
 }
 
 const TripCollageView: React.FC<TripCollageProps> = ({ isEditing = false }) => {
+  const baseUrl = import.meta.env.VITE_API_URL || 'https://ai-travel-agent-d8wv.onrender.com';
   const { name,id } = useParams<{ name: string, id: string }>()
   const { user } = useAuth()
   
@@ -40,7 +41,7 @@ const TripCollageView: React.FC<TripCollageProps> = ({ isEditing = false }) => {
       console.log("Fetching collage with ID:", id, "for user:")
 
       // Fixed the endpoint URL (removed extra brace)
-      const endpoint = `http://localhost:8000/api/v1/collage/collages/${name}/${id}`
+      const endpoint = `${baseUrl}/api/v1/collage/collages/${name}/${id}`
       console.log("Fetching from endpoint:", endpoint)
 
       const response = await fetch(endpoint, {
