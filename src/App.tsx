@@ -28,7 +28,7 @@ function App() {
             <Route path="/trip/:id" element={<TripDetailsPage />} />
             <Route path="/chat" element={<ChatPage/>}/>
             <Route path='/collage' element={<CollagePage/>}/>
-            <Route path='/collage/:id' element={<CollageView/>}/>
+            <Route path='/collage/:name/:id' element={<CollageView/>}/>
             <Route path="*" element={<Navigate to="/" replace />} />
             
           </Routes>
