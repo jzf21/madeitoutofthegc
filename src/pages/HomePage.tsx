@@ -4,7 +4,7 @@ import TripPlanForm from '../components/TripPlanForm';
 import { TripFormData, TripPlan } from '../types/trip';
 import { generateTripId, saveTripPlan, getTripPlans } from '../utils/tripStorage';
 import { MapPin, Calendar, Loader, CheckCircle } from 'lucide-react';
-import Navbar from '../components/NavBar';
+
 import { useAuth } from '../contexts/AuthContext';
 import Layout from '../layouts/Layout';
 

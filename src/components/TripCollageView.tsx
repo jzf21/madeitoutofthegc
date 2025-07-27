@@ -205,10 +205,15 @@ const TripCollageView: React.FC<TripCollageProps> = ({ isEditing = false }) => {
         {/* Header */}
         
         {/* Collage Area */}
-        <div className="bg-gradient-to-br from-[#EBE8DF]/80 to-[#E9E9DF]/80 backdrop-blur-sm rounded-3xl p-12 border border-[#E3E1DD]/50 shadow-2xl relative overflow-hidden min-h-[800px]">
+        <div className=" p-12 border  elative overflow-hidden min-h-[800px]">
           {/* Paper texture overlay */}
-          <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-transparent via-[#EBE8DF]/20 to-[#E9E9DF]/20"></div>
-
+          <div className="parchment absolute inset-0 opacity-30 bg-gradient-to-br from-transparent via-[#EBE8DF]/20 to-[#E9E9DF]/20"></div>
+            <svg>
+  <filter id="wavy2">
+    <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="1"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale="20" />
+  </filter>
+</svg>
           {/* Handwritten note area */}
           <div className="absolute top-8 left-8 max-w-xs">
             <div className="bg-white/90 p-4 rounded-lg shadow-lg transform -rotate-2 border border-[#E3E1DD]">

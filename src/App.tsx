@@ -7,6 +7,7 @@ import RegisterForm from './components/RegisterForm';
 import ChatPage from './pages/Chat';
 import CollagePage from './pages/Collage';
 import CollageView from './pages/CollageView';
+import Journal from './pages/Journal';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/trip/:id" element={<TripDetailsPage />} />
             <Route path="/chat" element={<ChatPage/>}/>
+            <Route path="/journal/:username" element={<Journal/>}/>
             <Route path='/collage' element={<CollagePage/>}/>
             <Route path='/collage/:name/:id' element={<CollageView/>}/>
             <Route path="*" element={<Navigate to="/" replace />} />
