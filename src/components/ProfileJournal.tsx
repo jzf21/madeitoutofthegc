@@ -440,7 +440,7 @@ const ProfileJournalBook: React.FC = () => {
       </button>
 
       {/* Book container */}
-      <div className="relative max-w-4xl w-full max-h-[100vh] aspect-[3/2]">
+      <div className="relative max-w-4xl w-full max-h-[100vh] aspect-[3/4]">
         {/* Book shadow */}
         <div className="absolute inset-0 bg-black/20 rounded-lg transform translate-x-2 translate-y-2 blur-xl"></div>
 
