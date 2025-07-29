@@ -7,6 +7,7 @@ import airplane from '../../assets/airplane.png'
 import mapcutout from '../../assets/mapcutout.webp'
 import mapcutout2 from '../../assets/mapcutout2.webp'
 import twintowers from '../../assets/twintowers.png'
+import casette from '../../assets/casette.webp'
 type Props = {
     username: string
    
@@ -28,14 +29,17 @@ export const Cover = (props: Props) => {
     <div className="absolute top-12 md:top-24 z-20 left-[10%] md:left-1/3 transform -translate-x-1/2">
         <img src={airplane} alt="Airplane" className="w-40 h-32 md:w-72 md:h-48" />
     </div>
-    <div className="absolute -bottom-16 md:-bottom-32 z-20 -left-2 md:-left-5 transform -translate-x-1/2">
-        <img src={mapcutout} alt="Map Cutout" className="w-48 md:w-auto" />
+    <div className="absolute -bottom-2 md:-bottom-32 z-20 -left-2 md:-left-5 transform -translate-x-1/2">
+        <img src={mapcutout} alt="Map Cutout" className="w-64 md:w-auto" />
     </div>
     <div className="absolute -top-16 md:-top-32 z-10 -left-10 md:-left-20 transform rotate-[45deg]">
         <img src={mapcutout2} alt="Map Cutout" className="w-48 md:w-72" />
     </div>
     <div className="absolute -top-4 md:top-2 z-20 -right-16 md:right-0 transform rotate-[-15deg]"> 
         <img src={twintowers} alt="Twin Towers" className="w-48 md:w-72" />
+    </div>
+    <div className="absolute bottom-0 md:bottom-0 z-20 -right-20 md:-right-20 transform -translate-x-1/2">
+        <img src={casette} alt="Cassette" className="w-48 h-32 md:w-72 md:h-48" />
     </div>
 
         {/* Main Content Container */}
