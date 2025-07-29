@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Lavishly+Yours&family=Notable&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pinyon+Script&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,4 +16,14 @@
     box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
     background: #fffef0;
   filter: url(#wavy2);
+}
+
+.pinyon-script {
+  font-family: 'Pinyon Script', cursive;
+}
+.notable {
+  font-family: 'Notable', sans-serif;
+}
+.cal-sans {
+  font-family: 'Cal Sans', sans-serif;
 }

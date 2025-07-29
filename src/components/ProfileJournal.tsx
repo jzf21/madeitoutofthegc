@@ -4,6 +4,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight, BookOpen, Calendar, MapPin, User, X, Loader2, Heart } from "lucide-react"
 import { useParams } from "react-router-dom"
+import { Cover } from "./journal/Cover"
 
 interface TripImage {
   id: string
@@ -182,42 +183,8 @@ const ProfileJournalBook: React.FC = () => {
       className="w-full h-full bg-gradient-to-r from-[#8B4513] via-[#A0522D] to-[#8B4513] rounded-lg shadow-2xl overflow-hidden cursor-pointer hover:shadow-3xl transition-all duration-300 transform hover:scale-105 relative"
     >
       {/* Book spine highlight */}
-      <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#D2691E]/30 to-transparent"></div>
-
-      {/* Book cover design */}
-      <div className="absolute inset-4 bg-gradient-to-br from-[#24424D] via-[#266267] to-[#24424D] rounded shadow-inner flex flex-col items-center justify-center text-white relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-8 right-8 w-32 h-32 border border-white/20 rounded-full"></div>
-          <div className="absolute bottom-12 left-12 w-24 h-24 border border-white/20 rounded-full"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-white/20 rounded-full"></div>
-        </div>
-
-        <div className="text-center relative z-10">
-          <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-8 backdrop-blur-sm">
-            <BookOpen className="w-12 h-12 text-white" />
-          </div>
-          <h1 className="text-4xl font-bold mb-4 tracking-wide">Welcome to My</h1>
-          <h2 className="text-3xl font-bold mb-2 text-[#F0B46B]">Travel Journey</h2>
-          <div className="space-y-2 text-white/80 mb-8">
-            <div className="flex items-center justify-center">
-              <User className="w-5 h-5 mr-2" />
-              <span className="text-xl capitalize">{username}</span>
-            </div>
-            <div className="flex items-center justify-center">
-              <Heart className="w-4 h-4 mr-2" />
-              <span>{collages.length} Travel Stories</span>
-            </div>
-          </div>
-          <p className="text-white/60 text-lg italic">Click to open and explore</p>
-        </div>
-
-        {/* Decorative corner elements */}
-        <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/30"></div>
-        <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-white/30"></div>
-        <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-white/30"></div>
-        <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-white/30"></div>
-      </div>
+      <Cover username={username}  />
+      
     </div>
   )
 
