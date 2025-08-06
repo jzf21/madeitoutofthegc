@@ -8,6 +8,8 @@ import ChatPage from './pages/Chat';
 import CollagePage from './pages/Collage';
 import CollageView from './pages/CollageView';
 import Journal from './pages/Journal';
+import ProfileMaps from './components/maps/ProfileMaps';
+import CustomizeMap from './components/maps/CustomizeMaps';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
             <Route path='/collage' element={<CollagePage/>}/>
             <Route path='/collage/:name/:id' element={<CollageView/>}/>
             <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path='/travel-map' element={<ProfileMaps/>}/>
+            <Route path='/profile-maps' element={<CustomizeMap/>}/>
             
           </Routes>
         </div>
